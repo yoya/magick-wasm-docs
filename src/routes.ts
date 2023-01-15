@@ -14,6 +14,14 @@ const routes: Array<RouteRecordRaw> = [
             { path: 'rotate', component: () => import('./views/classes/MagickImage/Rotate.vue') }
         ]
     },
+    { path: '/demos/retro', component: () => import('./views/demos/Retro/Index.vue') },
+    {
+        path: '/demos/retro',
+        component: () => import('./views/demos/Retro/Index.vue'),
+        children: [
+            { path: 'retro', component: () => import('./views/demos/Retro/Retro.vue') }
+        ]
+    },
     { path: '/:pathMatch(.*)*', component: () => import('./views/NotFound.vue') }
 ]
 
